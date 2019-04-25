@@ -1,0 +1,80 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto%20Mono">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Computed Properties and watchers</title>
+    <style>
+        #app>div {
+            margin: 5px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="navbar d-flex justify-content-between">
+        <span>Computed Properties and watchers</span>
+        <span>
+            <!-- <a href="../7th/index.html" style="font-size: 1rem">next</a> -->
+            <!-- <a href="../5th/index.html" style="font-size: 1rem">prev</a> -->
+            <img src="../images/vue-logo.png" alt="">
+        </span>
+    </div>
+
+    <div class="course">
+        <div class="italic font-20 text-bold m-2">Problem?</div>
+        <ul class="font-20">
+            <li>
+                In-template expressions are very convenient, but they are meant for simple operations. Putting too much
+                logic in your templates can make them bloated and hard to maintain.
+            </li>
+
+            <li>
+                The problem is made worse when you want to include the reversed message in your template more than once.
+            </li>
+
+        </ul>
+
+    </div>
+
+    <div class="italic font-20 text-bold m-2">Code : </div>
+    <div id="app">
+        <!-- simple computed -->
+        <div>
+            {{reversedMessage}}
+        </div>
+
+        <!-- why not using methods? -->
+        <h4>methods? same results, but ...</h4>
+
+        <!-- Challenge : make message reversed using methods ..
+        <div>
+            {{makeItReverse(message)}}
+        </div> -->
+
+
+        <div>
+            computed properties are cached based on their reactive dependencies!
+        </div>
+
+        <!-- watchers -->
+        <div>
+            Vue does provide a more generic way to observe and react to data changes on a Vue instance: watch properties
+        </div>
+
+        <div>
+            This is most useful when you want to perform asynchronous or expensive operations in response to changing
+            data.
+        </div>
+
+
+    </div>
+</body>
+
+<script src="../vue.min.js"></script>
+<script src="./index.js"></script>
+
+</html>

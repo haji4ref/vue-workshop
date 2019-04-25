@@ -1,0 +1,51 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto%20Mono">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Conditional Rendering</title>
+    <style>
+        #app>div {
+            margin: 5px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="navbar d-flex justify-content-between">
+        <span>Conditional Rendering</span>
+        <span>
+            <!-- <a href="../5th/index.html" style="font-size: 1rem">next</a> -->
+            <!-- <a href="../3rd/index.html" style="font-size: 1rem">prev</a> -->
+            <img src="../images/vue-logo.png" alt="">
+        </span>
+    </div>
+
+
+    <div class="italic font-20 text-bold m-2">Code : </div>
+    <div id="app">
+        <!-- v-if v-else-if v-else -->
+        <div>
+            <span v-if="type === 'a'">Hi there type A</span>
+            <span v-else-if="type === 'b'">Hi there type B</span>
+            <span v-else>Oh no 😢</span>
+
+            <!-- Challenge : what is difference between == and ===  -->
+        </div>
+
+        <!-- v-show -->
+        <div v-show="isActive">
+            v-show only toggles the display CSS property of the element.
+        </div>
+
+        <!-- Challenge : v-show or v-if? -->
+    </div>
+</body>
+
+<script src="../vue.min.js"></script>
+<script src="./index.js"></script>
+
+</html>

@@ -1,0 +1,89 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto%20Mono">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Class binding</title>
+    <style>
+        #app>div {
+            margin: 5px;
+        }
+    </style>
+
+    <style>
+        .active {
+            background-color: green;
+        }
+
+        .text-danger {
+            color: red;
+        }
+
+        .italic {
+            font-style: italic;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="navbar d-flex justify-content-between">
+        <span>Class binding</span>
+        <span>
+            <!-- <a href="../8th/index.html" style="font-size: 1rem">next</a> -->
+            <!-- <a href="../6th/index.html" style="font-size: 1rem">prev</a> -->
+            <img src="../images/vue-logo.png" alt="">
+        </span>
+    </div>
+
+
+
+    <div class="italic font-20 text-bold m-2">Code : </div>
+    <div id="app">
+
+        <!-- class binding : Object syntax -->
+        <h4>class binding : Object syntax</h4>
+
+        <div v-bind:class="{active:isActive}">
+            i'm active
+        </div>
+
+        <div class="italic" v-bind:class="{ active: isActive, 'text-danger': hasError }">
+            i'm active and red!
+        </div>
+
+        <sub>Note : variables binded to classes. it means that if isActive variable is changed then green
+            background-color is gone!</sub>
+
+        <div>
+            <button @click="()=>{this.isActive=!this.isActive;}">Toggle active division</button>
+        </div>
+
+        <div>
+            We can also bind to a computed property that returns an object
+        </div>
+
+        <div v-bind:class="classObject">
+            class binding with computed properties
+        </div>
+
+        <!-- class binding : Array syntax -->
+        <h4>class binding : Array syntax</h4>
+
+        <div v-bind:class="[activeClass, errorClass]"></div>
+
+        <div v-bind:class="[isActive ? activeClass : 'folan', errorClass]"></div>
+
+        <a href="https://vuejs.org/v2/guide/class-and-style.html#Binding-Inline-Styles">More info about style binding...
+        </a>
+
+
+    </div>
+</body>
+
+<script src="../vue.min.js"></script>
+<script src="./index.js"></script>
+
+</html>

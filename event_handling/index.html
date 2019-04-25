@@ -1,0 +1,60 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto%20Mono">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Event Handling</title>
+    <style>
+        #app>div {
+            margin: 5px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="navbar d-flex justify-content-between">
+        <span>Event handling</span>
+        <span>
+            <!-- <a href="../7th/index.html" style="font-size: 1rem">prev</a> -->
+            <img src="../images/vue-logo.png" alt="">
+        </span>
+    </div>
+
+
+
+    <div class="italic font-20 text-bold m-2">Code : </div>
+    <div id="app">
+
+        <!-- event handling when we just need to change some variables of intance -->
+        <div>
+            my counter is : {{counter}}
+        </div>
+
+        <!-- we can use v-on:click also -->
+        <button @click="counter++">plus</button>
+
+        <!-- method event handlers -->
+        <button @click="sayHello">sayHello</button>
+
+        <!-- we can pass params also -->
+        <button @click="sayHi('to little friend!')">sayHi with params</button>
+
+        <div @mouseover="counter++">Hover me!</div>
+
+        <a href="https://www.w3schools.com/jsref/dom_obj_event.asp">More html dom events...</a>
+
+        <a href="https://vuejs.org/v2/guide/events.html#Event-Modifiers">Read more about key and event modifiers...</a>
+
+        // Challenge : 
+
+
+    </div>
+</body>
+
+<script src="../vue.min.js"></script>
+<script src="./index.js"></script>
+
+</html>

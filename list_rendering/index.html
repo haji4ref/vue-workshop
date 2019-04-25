@@ -1,0 +1,145 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto%20Mono">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>List Rendering</title>
+    <style>
+        #app>div {
+            margin: 5px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="navbar d-flex justify-content-between">
+        <span>List rendering</span>
+        <span>
+            <!-- <a href="../6th/index.html" style="font-size: 1rem">next</a> -->
+            <!-- <a href="../4th/index.html" style="font-size: 1rem">prev</a> -->
+            <img src="../images/vue-logo.png" alt="">
+        </span>
+    </div>
+
+
+    <div class="italic font-20 text-bold m-2">Code : </div>
+    <div id="app">
+        <!-- simple list Rendering -->
+        <div>
+            <ul>
+                <li v-for="(asghar,ali) in items">
+                    {{asghar.title}}
+                </li>
+            </ul>
+        </div>
+
+        <!-- Array change detection -->
+        <div>
+            <span>
+                <button @click="()=>{this.items.push({id:6,title:'Mobile'})}">Push</button>
+            </span>
+
+            <span>
+                <button @click="()=>{this.items.pop()}">Pop</button>
+            </span>
+
+            <span>
+                <button @click="()=>{this.items.shift()}">Shift</button>
+            </span>
+
+            <span>
+                <button @click="()=>{this.items.splice(2)}">Splice</button>
+            </span>
+
+            <span>
+                <button @click="myfilter">Filter</button>
+            </span>
+
+            <span>
+                <button @click="map">Map</button>
+            </span>
+
+            <span>
+                <button @click="concat">Concat</button>
+            </span>
+
+        </div>
+
+        <!-- v-for in range -->
+        <div>
+            <ul>
+                <li v-for="n in 10">
+                    {{n}}
+                </li>
+            </ul>
+        </div>
+
+        <sub style="color:red">
+            Note that it’s not recommended to use v-if and v-for together. Refer to style guide for details.
+        </sub>
+
+        <sub>When they exist on the same node, v-for has a higher priority than v-if</sub>
+
+
+        <h4>
+            Challenge : list all restaurants. if a restaurant openining time is arrived then it is ok else if show user
+            that restaurant is not opened.
+        </h4>
+
+        <!-- <div>
+            <ul>
+                <li v-for="(restaurant,index) in restaurants">
+                    {{restaurant.name}}{{'-' +(restaurant.opens > 12 ? 'open' : 'close')}}
+                </li>
+            </ul>
+        </div> -->
+
+        <h4>
+            Challenge : just list all restaurants with 'irani' type.
+        </h4>
+
+        <!-- <div>
+            <ul>
+                <li v-for="(restaurant,index) in restaurants.filter((e)=>{return e.type ==='irani'})">
+                    {{restaurant.name}}
+                </li>
+            </ul>
+        </div> -->
+
+        <h4>
+            Challenge : make a searchable list of restaurants.
+            *** hint: use includes method of stirngs.
+        </h4>
+
+        <!-- <div>
+            <input type="text" v-model="search">
+        </div>
+
+        <div>
+            <ul>
+                <li v-for="(restaurant,index) in restaurants" v-if="restaurant.name.includes(search)">
+                    {{restaurant.name}}
+                </li>
+            </ul>
+        </div> -->
+
+        <h4>
+            some other array functions : reverse,join,...
+        </h4>
+
+        <div>
+            {{ message.split('').reverse().join('') }}
+        </div>
+
+    </div>
+
+    </div>
+</body>
+
+<script src="../vue.min.js"></script>
+<script src="./index.js"></script>
+
+</html>
