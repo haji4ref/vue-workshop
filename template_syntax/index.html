@@ -1,0 +1,92 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto%20Mono">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Template syntax</title>
+    <style>
+        #app>div {
+            margin: 5px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="navbar d-flex justify-content-between">
+        <span>Template syntax</span>
+        <span>
+            <!-- <a href="../4th/index.html" style="font-size: 1rem">next</a> -->
+            <!-- <a href="../2nd/index.html" style="font-size: 1rem">prev</a> -->
+            <img src="../images/vue-logo.png" alt="">
+        </span>
+    </div>
+
+
+    <div class="italic font-20 text-bold m-2">Code : </div>
+    <div id="app">
+        <!-- simple text -->
+        <div>
+            {{text}}
+        </div>
+
+        <div>
+            {{html}}
+        </div>
+
+        <!-- render html inside text -->
+        <div v-html="html"></div>
+        <sub style="color:red;">Note : Be carefull of XSS Attacks | How?</sub>
+
+        <!-- html attributes binding -->
+        <div>
+            <div v-bind:id="dynamicId">Div with dynamic id</div>
+
+            <div :id="dynamicId">Im lazy!</div>
+        </div>
+
+        <!-- using js expressions -->
+        <div>
+            <b>
+                Vue.js actually supports the full power of JavaScript expressions inside all data bindings
+            </b>
+            <div>
+                {{ number + 1 }}
+            </div>
+
+            <div>
+                {{ number ? 'YES' : 'NO' }}
+            </div>
+
+            <!-- Challenge : how ternary expression working? -->
+
+            <div>
+                {{ text.split('').reverse().join('') }}
+            </div>
+
+            <div v-bind:id="'list-' + dynamicId"></div>
+
+            <sub style="color:red;">
+                Note : One restriction is that each binding can only contain one single expression, so the following
+                will NOT work:
+            </sub>
+
+            <div>
+                <code>
+                    {{doesntWork}}
+                </code>
+
+                <!-- Challenge : What is diffrence between expression and statement in js? -->
+            </div>
+        </div>
+
+
+    </div>
+</body>
+
+<script src="../vue.min.js"></script>
+<script src="./index.js"></script>
+
+</html>

@@ -1,0 +1,76 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto%20Mono">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="navbar d-flex justify-content-between">
+        <span>Vue instance</span>
+        <span>
+            <!-- <a href="../3rd/index.html" style="font-size: 1rem">next</a> -->
+            <!-- <a href="../1ste/index.html" style="font-size: 1rem">prev</a> -->
+            <img src="../images/vue-logo.png" alt="">
+        </span>
+    </div>
+
+    <div class="course">
+        <div class="italic font-20 text-bold m-2">Architecture</div>
+        <ul class="font-20">
+            <li>
+                Although not strictly associated with the MVVM pattern, Vue’s design was partly inspired by it
+            </li>
+            <li>
+                A Vue application consists of a root Vue instance created with new Vue, optionally organized into a tree
+                of nested, reusable components.
+            </li>
+
+            <li>
+                All Vue components are also Vue instances, and so accept the same options object (except for a few
+                root-specific options).
+            </li>
+            <li>
+                Each Vue instance goes through a series of initialization steps when it’s created - for example, it
+                needs to set up data observation, compile the template, mount the instance to the DOM, and update the
+                DOM when data changes.
+            </li>
+            <li>
+                Along the way, it also runs functions called lifecycle hooks, giving users the opportunity to add their
+                own code at specific stages.
+            </li>
+            <li><a href="../images/lifecycle.png">lifecycle diagram</a></li>
+
+            <li>When a Vue instance is created, it adds all the properties found in its data object to Vue’s reactivity
+                system</li>
+
+            <li>When the values of those properties change, the view will “react”, updating to match the new values.
+            </li>
+
+
+        </ul>
+        <div class="italic font-20 text-bold m-2">Options</div>
+
+        <ul class="font-20">
+            <li>When you create a Vue instance, you pass in an options object</li>
+            <li><a href="https://vuejs.org/v2/api/#Options-Data">Options full list</a></li>
+            <li><a href="https://vuejs.org/v2/guide/reactivity.html">Reactivity in depth</a> Vue js documentation</li>
+
+            <li><a href="https://www.vuemastery.com/courses/advanced-components/build-a-reactivity-system/">Building
+                    simple reactivity system</a> Vue mastery video</li>
+        </ul>
+    </div>
+
+    <div class="italic font-20 text-bold m-2">Code : </div>
+    <div id="app">
+        {{message}}
+    </div>
+</body>
+
+<script src="../vue.min.js"></script>
+<script src="./index.js"></script>
+
+</html>
