@@ -1,9 +1,6 @@
 <template>
     <div>
-        <nav-bar :items="items"></nav-bar>
-
-        <restaurants></restaurants>
-
+        <router-view></router-view>
     </div>
 </template>
 

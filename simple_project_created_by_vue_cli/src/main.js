@@ -8,15 +8,7 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter);
 
-import Order from './components/Order.vue'
-
-const routes = [
-    {path: '/order', component: Order},
-]
-
-const router = new VueRouter({
-    routes
-})
+import router from './router'
 
 window.axios = axios;
 

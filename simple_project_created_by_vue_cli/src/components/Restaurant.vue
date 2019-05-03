@@ -5,7 +5,7 @@
                 <img :src="imgUrl" alt="">
             </div>
             <div>
-                <div>{{name}}</div>
+                <div>{{reversedName}}</div>
 
                 <div> {{rate}}</div>
 
@@ -22,7 +22,7 @@
             </div>
         </div>
         <div>
-            <button>سفارش</button>
+            <router-link to="/order">سفارش</router-link>
         </div>
     </div>
 </template>
@@ -41,6 +41,11 @@
                 },
                 active: true
             }
+        },
+        computed: {
+            // reversedName:function () {
+            //     return this.name.split('').reverse().join('');
+            // }
         }
     }
 </script>
